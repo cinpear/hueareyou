@@ -8,18 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const timeDiff = today.getTime() - startDate.getTime();
   const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)) + 1;
 
-  const dateSeed = `${year}${month.toString().padStart(2, "0")}${day
-    .toString()
-    .padStart(2, "0")}`;
-  let hash = 0;
-  for (let i = 0; i < dateSeed.length; i++) {
-    hash = (hash << 5) - hash + dateSeed.charCodeAt(i);
-    hash |= 0;
+  let r = Math.abs((day * 179 * month) % 256);
+  let g = Math.abs((month * 251 * year) % 256);
+  let b = Math.abs((year * 373 * day) % 256);
+
+  let components = [r, g, b].sort((a, b) => a - b);
+  const diffThreshold = 64;
+
+  if (components[1] - components[0] < diffThreshold) {
+    components[1] = (components[0] + diffThreshold) % 256;
+  }
+  if (components[2] - components[1] < diffThreshold) {
+    components[2] = (components[1] + diffThreshold) % 256;
   }
 
-  const r = Math.abs((hash * 7) % 256);
-  const g = Math.abs((hash * 13) % 256);
-  const b = Math.abs((hash * 17) % 256);
+  r = components[day % 3];
+  g = components[(day + 1) % 3];
+  b = components[(day + 2) % 3];
 
   const colorDisplay = document.getElementById("colorBox");
   colorDisplay.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
