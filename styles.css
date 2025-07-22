@@ -156,3 +156,8 @@ h1 {
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
+
+footer {
+  font-family: Montserrat;
+  margin-top: 1.5rem;
+}
