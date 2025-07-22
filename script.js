@@ -230,8 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <h2>Congrats!</h2>
         <p>You guessed the correct-ish color!</p>
         <p>It took you <span id="guessCountDisplay">${guessCount}</span> guesses.</p>
-        <button id="copyScoreButton">Copy Score</button>
-        <button id="closeModalButton">Close</button>
+        <button id="copyScoreButton" class="copy-score">Copy Score</button>
+        <button id="closeModalButton" class="close-modal">Close</button>
     </div>
     `;
     document.body.appendChild(modal);

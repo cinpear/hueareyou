@@ -21,6 +21,7 @@ h1 {
   width: 200px;
   height: 200px;
   background-color: #aae1ff;
+  border-radius: 6px;
   margin: 20px auto;
 }
 
@@ -155,6 +156,15 @@ h1 {
   padding: 20px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat";
+}
+
+.copy-score {
+  font-family: "Montserrat";
+}
+
+.close-modal {
+  font-family: "Montserrat";
 }
 
 footer {
