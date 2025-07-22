@@ -104,7 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const guessedR = values[0] * 16 + values[1];
     const guessedG = values[2] * 16 + values[3];
     const guessedB = values[4] * 16 + values[5];
-    return guessedR === r && guessedG === g && guessedB === b;
+    return (
+      r - 3 <= guessedR <= r + 3 &&
+      g - 3 <= guessedG <= g + 3 &&
+      b - 3 <= guessedB <= b + 3
+    );
   }
 
   function createSubmissionItem(values) {
@@ -159,37 +163,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const timestamp = document.createElement("span");
     timestamp.textContent = "";
     timestamp.textContent += "🔴";
-    if (values[0] * 16 + values[1] < r) {
+    if (r - 3 <= values[0] * 16 + values[1] <= r + 3) {
+      //timestamp.textContent += values[0] + "" + values[1];
+      timestamp.textContent += "✅";
+    } else if (values[0] * 16 + values[1] < r) {
       timestamp.textContent += "⬆️";
     } else if (values[0] * 16 + values[1] > r) {
       timestamp.textContent += "⬇️";
-    } else if (values[0] * 16 + values[1] === r) {
-      //timestamp.textContent += values[0] + "" + values[1];
-      timestamp.textContent += "✅";
     } else {
       timestamp.textContent += "🚫";
     }
 
     timestamp.textContent += "🟢";
-    if (values[2] * 16 + values[3] < g) {
+    if (g - 3 <= values[2] * 16 + values[3] <= g + 3) {
+      //timestamp.textContent += values[2] + "" + values[3];
+      timestamp.textContent += "✅";
+    } else if (values[2] * 16 + values[3] < g) {
       timestamp.textContent += "⬆️";
     } else if (values[2] * 16 + values[3] > g) {
       timestamp.textContent += "⬇️";
-    } else if (values[2] * 16 + values[3] === g) {
-      //timestamp.textContent += values[2] + "" + values[3];
-      timestamp.textContent += "✅";
     } else {
       timestamp.textContent += "🚫";
     }
 
     timestamp.textContent += "🔵";
-    if (values[4] * 16 + values[5] < b) {
+    if (b - 3 <= values[4] * 16 + values[5] <= b + 3) {
+      //timestamp.textContent += values[4] + "" + values[5];
+      timestamp.textContent += "✅";
+    } else if (values[4] * 16 + values[5] < b) {
       timestamp.textContent += "⬆️";
     } else if (values[4] * 16 + values[5] > b) {
       timestamp.textContent += "⬇️";
-    } else if (values[4] * 16 + values[5] === b) {
-      //timestamp.textContent += values[4] + "" + values[5];
-      timestamp.textContent += "✅";
     } else {
       timestamp.textContent += "🚫";
     }
