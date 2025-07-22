@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hue Are You?</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="game">
+      <h1>What Color Is this?</h1>
+      <div>
+        <p>sorry ah everything is major jank 😭</p>
+        <br />
+        <p>legit just pull up a color wheel on a diff site</p>
+      </div>
+      <div id="colorBox" class="displayed-color">
+        <p id="test">What color is this?</p>
+      </div>
+      <div class="input-row">
+        <input
+          type="text"
+          class="input-box"
+          maxlength="1"
+          placeholder=""
+          autofocus
+        />
+        <input type="text" class="input-box" maxlength="1" placeholder="" />
+        <input type="text" class="input-box" maxlength="1" placeholder="" />
+        <input type="text" class="input-box" maxlength="1" placeholder="" />
+        <input type="text" class="input-box" maxlength="1" placeholder="" />
+        <input type="text" class="input-box" maxlength="1" placeholder="" />
+      </div>
+      <button class="submit-button" disabled>Submit</button>
+
+      <div class="past-submissions">
+        <h2>Past Submissions</h2>
+        <div id="submissionHistory" class="submission-history">
+          <p class="empty">No submissions yet</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
