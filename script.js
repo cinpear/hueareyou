@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
           `🎨 Hue Are You #${daysDiff.toString().padStart(2, "0")}
 ${month.toString().padStart(2, "0")}.${day.toString().padStart(2, "0")}.${year}
 Attempts: ${guessCount}
-killingmyself.com`
+https://cinpear.github.io/hueareyou/`
         )
         .then(() => alert("Score copied to clipboard!"))
         .catch((err) => console.error("Failed to copy: ", err));
