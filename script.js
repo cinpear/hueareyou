@@ -105,9 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const guessedG = values[2] * 16 + values[3];
     const guessedB = values[4] * 16 + values[5];
     return (
-      r - 3 <= guessedR <= r + 3 &&
-      g - 3 <= guessedG <= g + 3 &&
-      b - 3 <= guessedB <= b + 3
+      r - 1 <= guessedR <= r + 1 &&
+      g - 1 <= guessedG <= g + 1 &&
+      b - 1 <= guessedB <= b + 1
     );
   }
 
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const timestamp = document.createElement("span");
     timestamp.textContent = "";
     timestamp.textContent += "🔴";
-    if (r - 3 <= values[0] * 16 + values[1] <= r + 3) {
+    if (r - 1 <= values[0] * 16 + values[1] <= r + 1) {
       //timestamp.textContent += values[0] + "" + values[1];
       timestamp.textContent += "✅";
     } else if (values[0] * 16 + values[1] < r) {
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     timestamp.textContent += "🟢";
-    if (g - 3 <= values[2] * 16 + values[3] <= g + 3) {
+    if (g - 1 <= values[2] * 16 + values[3] <= g + 1) {
       //timestamp.textContent += values[2] + "" + values[3];
       timestamp.textContent += "✅";
     } else if (values[2] * 16 + values[3] < g) {
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     timestamp.textContent += "🔵";
-    if (b - 3 <= values[4] * 16 + values[5] <= b + 3) {
+    if (b - 1 <= values[4] * 16 + values[5] <= b + 1) {
       //timestamp.textContent += values[4] + "" + values[5];
       timestamp.textContent += "✅";
     } else if (values[4] * 16 + values[5] < b) {
